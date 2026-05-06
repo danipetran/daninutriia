@@ -1,262 +1,195 @@
-export default function FormularioAnamneseNutriIA() {
-  return (
-    <div className="min-h-screen bg-[#f8f4ef] flex items-center justify-center p-6">
-      <div className="w-full max-w-2xl bg-white rounded-3xl shadow-xl p-8">
-        <div className="text-center mb-8">
-          <div className="text-5xl mb-3">💛</div>
-          <h1 className="text-3xl font-bold text-gray-800">
-            Dani Nutri IA
-          </h1>
-          <p className="text-gray-500 mt-2">
-            Seu acompanhamento alimentar inteligente
-          </p>
-        </div>
+import streamlit as st
 
-        <form className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Nome completo
-            </label>
-            <input
-              type="text"
-              placeholder="Digite seu nome"
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+st.set_page_config(
+    page_title="Dani Nutri IA",
+    page_icon="💛",
+    layout="centered"
+)
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Idade
-              </label>
-              <input
-                type="number"
-                placeholder="Ex: 35"
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              />
-            </div>
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f8f4ef;
+    }
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Peso (kg)
-              </label>
-              <input
-                type="number"
-                placeholder="Ex: 64"
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              />
-            </div>
+    .title {
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        color: #333333;
+    }
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Altura (cm)
-              </label>
-              <input
-                type="number"
-                placeholder="Ex: 160"
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              />
-            </div>
-          </div>
+    .subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #777777;
+        margin-bottom: 30px;
+    }
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Objetivo
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
-              <option>Selecione</option>
-              <option>Emagrecimento</option>
-              <option>Manutenção</option>
-              <option>Ganho de massa</option>
-              <option>Alimentação saudável</option>
-            </select>
-          </div>
+    .stButton > button {
+        width: 100%;
+        background-color: #fb923c;
+        color: white;
+        border-radius: 14px;
+        border: none;
+        padding: 14px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Você pratica atividade física?
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300 mb-4">
-              <option>Selecione</option>
-              <option>Não pratico</option>
-              <option>1 a 2x por semana</option>
-              <option>3 a 5x por semana</option>
-              <option>Treino diariamente</option>
-            </select>
+st.markdown('<div class="title">💛 Dani Nutri IA</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Seu acompanhamento alimentar inteligente e humano</div>', unsafe_allow_html=True)
 
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Qual atividade física você pratica?
-            </label>
-            <input
-              type="text"
-              placeholder="Ex: musculação, caminhada, corrida, pilates..."
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300 mb-4"
-            />
+with st.form("anamnese_form"):
 
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Qual a duração média do treino?
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
-              <option>Selecione</option>
-              <option>Menos de 30 minutos</option>
-              <option>30 a 45 minutos</option>
-              <option>45 a 60 minutos</option>
-              <option>Mais de 1 hora</option>
-            </select>
-          </div>
+    st.subheader("📋 Anamnese Inicial")
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Como é sua rotina alimentar?
-            </label>
-            <textarea
-              rows={4}
-              placeholder="Conte como costuma ser sua alimentação no dia a dia, os horários que geralmente come e se costuma pular refeições"
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+    nome = st.text_input("Nome completo")
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Você sente ansiedade ou compulsão alimentar?
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
-              <option>Selecione</option>
-              <option>Não</option>
-              <option>Às vezes</option>
-              <option>Com frequência</option>
-            </select>
-          </div>
+    col1, col2, col3 = st.columns(3)
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Você possui alguma condição de saúde?
-            </label>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-gray-700">
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Gastrite
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Diabetes
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Intestino preso
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Intestino solto
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Ansiedade
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Compulsão alimentar
-              </label>
-              <label className="flex items-center gap-2">
-                <input type="checkbox" /> Hipertireoidismo
-              </label>
-            </div>
-          </div>
+    with col1:
+        idade = st.number_input("Idade", min_value=10, max_value=100)
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Que horas você acorda?
-              </label>
-              <input
-                type="time"
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              />
-            </div>
+    with col2:
+        peso = st.number_input("Peso (kg)", min_value=30.0, max_value=300.0)
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Que horas costuma dormir?
-              </label>
-              <input
-                type="time"
-                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              />
-            </div>
-          </div>
+    with col3:
+        altura = st.number_input("Altura (cm)", min_value=100, max_value=250)
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Quantas horas você dorme por noite?
-            </label>
-            <input
-              type="number"
-              placeholder="Ex: 7"
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+    objetivo = st.selectbox(
+        "Objetivo",
+        [
+            "Emagrecimento",
+            "Manutenção",
+            "Ganho de massa",
+            "Alimentação saudável"
+        ]
+    )
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Você costuma acordar cansado(a)?
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
-              <option>Selecione</option>
-              <option>Não</option>
-              <option>Às vezes</option>
-              <option>Frequentemente</option>
-            </select>
-          </div>
+    st.subheader("🏋️ Atividade Física")
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Como é sua rotina de trabalho?
-            </label>
-            <textarea
-              rows={3}
-              placeholder="Ex: trabalho sentado, rotina corrida, muito tempo fora de casa..."
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+    frequencia = st.selectbox(
+        "Frequência de treino",
+        [
+            "Não pratico",
+            "1 a 2x por semana",
+            "3 a 5x por semana",
+            "Treino diariamente"
+        ]
+    )
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Qual seu maior desafio hoje?
-            </label>
-            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
-              <option>Selecione</option>
-              <option>Ansiedade alimentar</option>
-              <option>Falta de tempo</option>
-              <option>Vontade de doce</option>
-              <option>Falta de disciplina</option>
-              <option>Compulsão alimentar</option>
-            </select>
-          </div>
+    atividade = st.text_input(
+        "Qual atividade física você pratica?",
+        placeholder="Ex: musculação, caminhada, corrida..."
+    )
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Alimentos que você gosta
-            </label>
-            <textarea
-              rows={3}
-              placeholder="Ex: frutas, arroz, massas, chocolate..."
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+    duracao = st.selectbox(
+        "Duração média do treino",
+        [
+            "Menos de 30 minutos",
+            "30 a 45 minutos",
+            "45 a 60 minutos",
+            "Mais de 1 hora"
+        ]
+    )
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Alimentos que você não gosta ou não comeria
-            </label>
-            <textarea
-              rows={3}
-              placeholder="Ex: peixe, cebola, fígado..."
-              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
+    st.subheader("🍽️ Rotina Alimentar")
 
-          <button
-            type="submit"
-            className="w-full bg-orange-400 hover:bg-orange-500 transition-all text-white font-semibold py-4 rounded-2xl text-lg shadow-md"
-          >
-            Começar meu acompanhamento 💛
-          </button>
-        </form>
-      </div>
-    </div>
-  )
-}
+    rotina_alimentar = st.text_area(
+        "Como é sua rotina alimentar?",
+        placeholder="Conte como costuma ser sua alimentação no dia a dia, os horários que geralmente come e se costuma pular refeições"
+    )
+
+    st.subheader("💛 Saúde & Bem-estar")
+
+    ansiedade = st.selectbox(
+        "Você sente ansiedade ou compulsão alimentar?",
+        [
+            "Não",
+            "Às vezes",
+            "Com frequência"
+        ]
+    )
+
+    condicoes = st.multiselect(
+        "Você possui alguma condição de saúde?",
+        [
+            "Gastrite",
+            "Diabetes",
+            "Intestino preso",
+            "Intestino solto",
+            "Ansiedade",
+            "Compulsão alimentar",
+            "Hipertireoidismo"
+        ]
+    )
+
+    col4, col5 = st.columns(2)
+
+    with col4:
+        acorda = st.time_input("Que horas você acorda?")
+
+    with col5:
+        dorme = st.time_input("Que horas costuma dormir?")
+
+    sono = st.number_input(
+        "Quantas horas você dorme por noite?",
+        min_value=0,
+        max_value=24
+    )
+
+    cansado = st.selectbox(
+        "Você costuma acordar cansado(a)?",
+        [
+            "Não",
+            "Às vezes",
+            "Frequentemente"
+        ]
+    )
+
+    rotina_trabalho = st.text_area(
+        "Como é sua rotina de trabalho?",
+        placeholder="Ex: trabalho sentado, rotina corrida, muito tempo fora de casa..."
+    )
+
+    desafio = st.selectbox(
+        "Qual seu maior desafio hoje?",
+        [
+            "Ansiedade alimentar",
+            "Falta de tempo",
+            "Vontade de doce",
+            "Falta de disciplina",
+            "Compulsão alimentar"
+        ]
+    )
+
+    gosta = st.text_area(
+        "Alimentos que você gosta",
+        placeholder="Ex: frutas, arroz, massas, chocolate..."
+    )
+
+    nao_gosta = st.text_area(
+        "Alimentos que você não gosta ou não comeria",
+        placeholder="Ex: peixe, cebola, fígado..."
+    )
+
+    enviar = st.form_submit_button("Começar meu acompanhamento 💛")
+
+if enviar:
+
+    st.success("Anamnese enviada com sucesso 💛")
+
+    st.subheader("📊 Resumo do Cadastro")
+
+    st.write(f"**Nome:** {nome}")
+    st.write(f"**Objetivo:** {objetivo}")
+    st.write(f"**Atividade Física:** {atividade}")
+    st.write(f"**Frequência:** {frequencia}")
+    st.write(f"**Maior desafio:** {desafio}")
+
+    st.info(
+        "Em breve sua IA irá calcular automaticamente calorias, macros e acompanhar suas refeições 🍽️"
+    )
