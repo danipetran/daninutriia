@@ -1,0 +1,262 @@
+export default function FormularioAnamneseNutriIA() {
+  return (
+    <div className="min-h-screen bg-[#f8f4ef] flex items-center justify-center p-6">
+      <div className="w-full max-w-2xl bg-white rounded-3xl shadow-xl p-8">
+        <div className="text-center mb-8">
+          <div className="text-5xl mb-3">💛</div>
+          <h1 className="text-3xl font-bold text-gray-800">
+            Dani Nutri IA
+          </h1>
+          <p className="text-gray-500 mt-2">
+            Seu acompanhamento alimentar inteligente
+          </p>
+        </div>
+
+        <form className="space-y-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Nome completo
+            </label>
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Idade
+              </label>
+              <input
+                type="number"
+                placeholder="Ex: 35"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Peso (kg)
+              </label>
+              <input
+                type="number"
+                placeholder="Ex: 64"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Altura (cm)
+              </label>
+              <input
+                type="number"
+                placeholder="Ex: 160"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Objetivo
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
+              <option>Selecione</option>
+              <option>Emagrecimento</option>
+              <option>Manutenção</option>
+              <option>Ganho de massa</option>
+              <option>Alimentação saudável</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Você pratica atividade física?
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300 mb-4">
+              <option>Selecione</option>
+              <option>Não pratico</option>
+              <option>1 a 2x por semana</option>
+              <option>3 a 5x por semana</option>
+              <option>Treino diariamente</option>
+            </select>
+
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Qual atividade física você pratica?
+            </label>
+            <input
+              type="text"
+              placeholder="Ex: musculação, caminhada, corrida, pilates..."
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300 mb-4"
+            />
+
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Qual a duração média do treino?
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
+              <option>Selecione</option>
+              <option>Menos de 30 minutos</option>
+              <option>30 a 45 minutos</option>
+              <option>45 a 60 minutos</option>
+              <option>Mais de 1 hora</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Como é sua rotina alimentar?
+            </label>
+            <textarea
+              rows={4}
+              placeholder="Conte como costuma ser sua alimentação no dia a dia, os horários que geralmente come e se costuma pular refeições"
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Você sente ansiedade ou compulsão alimentar?
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
+              <option>Selecione</option>
+              <option>Não</option>
+              <option>Às vezes</option>
+              <option>Com frequência</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Você possui alguma condição de saúde?
+            </label>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-gray-700">
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Gastrite
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Diabetes
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Intestino preso
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Intestino solto
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Ansiedade
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Compulsão alimentar
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" /> Hipertireoidismo
+              </label>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Que horas você acorda?
+              </label>
+              <input
+                type="time"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Que horas costuma dormir?
+              </label>
+              <input
+                type="time"
+                className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Quantas horas você dorme por noite?
+            </label>
+            <input
+              type="number"
+              placeholder="Ex: 7"
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Você costuma acordar cansado(a)?
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
+              <option>Selecione</option>
+              <option>Não</option>
+              <option>Às vezes</option>
+              <option>Frequentemente</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Como é sua rotina de trabalho?
+            </label>
+            <textarea
+              rows={3}
+              placeholder="Ex: trabalho sentado, rotina corrida, muito tempo fora de casa..."
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Qual seu maior desafio hoje?
+            </label>
+            <select className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300">
+              <option>Selecione</option>
+              <option>Ansiedade alimentar</option>
+              <option>Falta de tempo</option>
+              <option>Vontade de doce</option>
+              <option>Falta de disciplina</option>
+              <option>Compulsão alimentar</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Alimentos que você gosta
+            </label>
+            <textarea
+              rows={3}
+              placeholder="Ex: frutas, arroz, massas, chocolate..."
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Alimentos que você não gosta ou não comeria
+            </label>
+            <textarea
+              rows={3}
+              placeholder="Ex: peixe, cebola, fígado..."
+              className="w-full rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-orange-400 hover:bg-orange-500 transition-all text-white font-semibold py-4 rounded-2xl text-lg shadow-md"
+          >
+            Começar meu acompanhamento 💛
+          </button>
+        </form>
+      </div>
+    </div>
+  )
+}
